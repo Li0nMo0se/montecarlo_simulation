@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from typing import *
 
 def vectorize_mc(steps: int,
                  Npaths: int,
@@ -13,7 +14,7 @@ def vectorize_mc(steps: int,
                  kappa: float,
                  theta: float,
                  epsilon: float,
-                 rho: float) -> (float, np.array, np.array):
+                 rho: float) -> Tuple[float, np.array, np.array]:
 
     V_t = np.empty((Npaths,steps))
     S_t = np.empty((Npaths,steps))
@@ -47,7 +48,7 @@ def naive_mc(steps: int,
              kappa: float,
              theta: float,
              epsilon: float,
-             rho: float) -> (float, np.array, np.array):
+             rho: float) -> Tuple[float, np.array, np.array]:
     V = np.empty((Npaths,steps))
     S = np.empty((Npaths,steps))
     for n in range(Npaths):
